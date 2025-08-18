@@ -1,5 +1,0 @@
-streamlit
-openai
-google-api-python-client
-pandas
-plotly
