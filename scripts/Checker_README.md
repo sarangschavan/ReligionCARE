@@ -1,6 +1,6 @@
 # Toxicity & Rationale Checker
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://<YOUR-APP>.streamlit.app)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://religioncare-eekb6uctjxuhugjashz743.streamlit.app/)
 
 This tool lets you paste any text and get **two independent safety assessments**:
 
@@ -17,20 +17,20 @@ This tool lets you paste any text and get **two independent safety assessments**
 
 ## 🔗 Live app
 
-👉 **Open the checker:** https://<YOUR-APP>.streamlit.app  
+👉 **Open the checker:** https://religioncare-eekb6uctjxuhugjashz743.streamlit.app/  
 _No install needed. Works in any modern browser._
 
 ---
 
-## 🧠 How it works (aligned with the code)
+## 🧠 How it works
 
 - **Perspective API**  
-  The app POSTs the input text to Google’s Comment Analyzer (`/v1alpha1/comments:analyze`) with attributes:  
-  `TOXICITY`, `INSULT`, `IDENTITY_ATTACK`, `THREAT`, `PROFANITY`.  
-  It returns a dict of summary scores (0–1) for whichever attributes are present.
+  Sends the text to Google’s Comment Analyzer (`/v1alpha1/comments:analyze`) requesting scores for  
+  `TOXICITY`, `INSULT`, `IDENTITY_ATTACK`, `THREAT`, `PROFANITY`, and returns 0–1 summary scores.
 
 - **GPT judge (structured JSON)**  
-  The app calls the **OpenAI Chat Completions** endpoint with your selected model (e.g., `gpt-4.1`, `gpt-4o-mini`, `gpt-5`) and a strict **JSON schema**:
+  Calls the OpenAI Chat Completions API with your selected model (`gpt-4.1`, `gpt-4o-mini`, or `gpt-5`), asking for
+  a JSON object matching this schema:
   ```json
   {
     "toxicity_label": "toxic|non_toxic|unclear",
