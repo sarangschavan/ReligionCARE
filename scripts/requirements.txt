@@ -1,0 +1,4 @@
+cp requirements_app.txt requirements.txt
+git add requirements.txt
+git commit -m "Add deployment requirements.txt for Streamlit Cloud"
+git push
