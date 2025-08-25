@@ -7,7 +7,7 @@ from google.colab import drive
 # --- Paths ---
 drive.mount('/content/drive', force_remount=False)
 BASE_DIR    = "/content/drive/MyDrive/datasets_religion/religion_care_outputs/mistral_bpr_model"
-ADAPTER_DIR = "/content/drive/MyDrive/finetune_DPR/mistral_dpo_lora"   # your SFT/DPO adapters
+ADAPTER_DIR = "/content/drive/MyDrive/finetune_DPR/mistral_dpo_lora"   #  SFT/DPO adapters
 
 USE_ADAPTERS = True   # True = finetuned (base + adapters), False = base-only
 
